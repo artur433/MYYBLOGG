@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Категории</title>
+</head>
+<body>
+    <aside>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li>Главная</li></a>
+            <a href="{% url 'categories' %}">Категории</li></a>
+        </ul>
+    </aside>
+    <main>
+        Категории
+    </main>
+    <div class="features">
+        <h1>Категории постов</h1>
+        {% if categories %}
+            {% for category in categories %}
+                <a href="{% url 'categories-detail' category.pk %}">{{ category.title }}</a>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей</p>
+        {% endif %}
+    </div>
+</body>
+</html>

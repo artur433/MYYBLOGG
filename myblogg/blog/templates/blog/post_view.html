@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <aside>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li>Главная</li></a>
+            <a href="{% url 'categories' %}">Категории</li></a>
+        </ul>
+    </aside>
+    <div class="features">
+        <h1>{{ post.title }}</h1>
+        <p>Категория: {{ post.category.title }}</p>
+        <p>{{ post.content }}</p>
+    </div>
+</body>
+</html>
